@@ -14,6 +14,7 @@ class HomeContainer extends Component {
 render(){
   return (
     <HeaderNav_homeContainer/>
+    <DisplayContainer/>
 
   )
 }
