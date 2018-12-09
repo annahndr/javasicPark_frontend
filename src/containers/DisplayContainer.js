@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
- 
+import Map_displayContainer from '../components/Map_displayContainer';
+
 
 
 class DisplayContainer extends Component{
@@ -11,8 +12,14 @@ class DisplayContainer extends Component{
   }
 
   render(){
-
+    return(
+    <Map_displayContainer/>
+  )
   }
+
+  pageComponent
 
 ////
 }
+
+export default DisplayContainer;
