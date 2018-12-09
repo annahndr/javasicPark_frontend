@@ -1,25 +1,28 @@
 import React, {Component} from 'react';
-import Map_displayContainer from '../components/Map_displayContainer';
+import Map from '../components/Map';
+import PaddockGuests from '../components/PaddockGuests';
+import './displayContainer.css';
 
-
-
-class DisplayContainer extends Component{
+class DisplayContainer extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      page: null
-    }
   }
 
   render(){
     return(
-    <Map_displayContainer/>
-  )
+      <>
+      <div className="display-wrapper">
+        <div className="map">
+        <Map/>
+        </div>
+        <div className="paddock-info">
+        <PaddockGuests/>
+        </div>
+      </div>
+      </>
+    )
+
   }
-
-  pageComponent
-
-////
 }
 
-export default DisplayContainer;
+export default DisplayContainer

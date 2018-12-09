@@ -1,25 +1,67 @@
 import React, {Component} from 'react';
-import HeaderNav_homeContainer from '../components/HeaderNav_homeContainer.js'
-import DisplayContainer from './DisplayContainer';
+// import HeaderNav from '../components/HeaderNav.js'
+import DisplayContainer from './DisplayContainer.js'
+import PaddocksList from '../components/PaddocksList.js'
+import DinosaursList from '../components/DinosaursList.js'
+import './homeContainer.css';
 
 
-class HomeContainer extends Component {
+class HomeContaner extends Component {
   constructor() {
     super();
-    this.state = {
-      paddock: {}
+    this.state = { page: null };
+
+    this.gotoHome = this.gotoHome.bind(this);
+    this.gotoDino = this.gotoDino.bind(this);
+    this.gotoPaddock = this.gotoPaddock.bind(this);
+  }
+
+  render() {
+    const child = this.pageComponent();
+    return (
+      <>
+      <header className="header">
+        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
+        <img src="./images/JAVASIC_LOGO.png" alt="logo" height="100" width="600"/>
+        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
+      </header>
+      <div className="navbar">
+        <a onClick={this.gotoHome}>Home</a>
+        <a onClick={this.gotoDino}>Dinosaurs</a>
+        <a onClick={this.gotoPaddock}>Paddock</a>
+      </div>
+      <div>
+        {child}
+      </div>
+      </>
+    );
+  }
+
+  pageComponent() {
+    switch (this.state.page) {
+      case "/dinosaurs":
+      return <DinosaursList />;
+      case "/paddocks":
+      return <PaddocksList />;
+      default:
+      return <DisplayContainer />;
     }
   }
 
+  gotoHome(event) {
+    event.preventDefault();
+    this.setState({ page: "/home" });
+  }
 
-render(){
-  return (
-    <>
-    <HeaderNav_homeContainer/>
-    <DisplayContainer/>
-    </>
-  )
+  gotoDino(event) {
+    event.preventDefault();
+    this.setState({ page: "/dinosaurs" });
+  }
+
+  gotoPaddock(event) {
+    event.preventDefault();
+    this.setState({ page: "/paddocks" });
+  }
 }
 
-}
- export default HomeContainer;
+export default HomeContaner;
