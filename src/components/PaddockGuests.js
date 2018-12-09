@@ -16,7 +16,7 @@ class PaddockGuests extends Component {
       })
 
       return(
-
+        // if (!this.props.paddockInfo) return null;
 
         <>
         <div className="paddock-guests-title">
