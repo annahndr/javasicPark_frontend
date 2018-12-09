@@ -21,7 +21,7 @@ onPaddockSelected(id){
   let request = new Request()
   request.get(url)
   .then(data => {this.setState({paddock: data})
-  console.log(data);
+  console.log(this.state.paddock);
 })
 }
   render(){

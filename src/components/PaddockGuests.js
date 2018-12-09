@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
 import Dinosaurs from './Dinosaurs';
 
-class PaddockGuests extends Component {
-  constructor(props){
-    super(props);
+const PaddockGuests = (props)=>{
+if (!props.paddockInfo) return null;
 
-  }
-    render(){
-      const paddockGuests = this.props.paddockInfo._embedded.dinosaurs.map((dinosaur, index) => {
-        <div className="dinosaur-short">
-        <p>{dinosaur.name}</p>
-        <p>{dinosaur.DinoSpecies}</p>
-        <p>{dinosaur.DinoDietType}</p>
-        </div>
-      })
+const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index) => {
+    return <div className="dinosaur-short">
+    <p>{dinosaur.name}</p>
+    <p>{dinosaur.DinoSpecies}</p>
+    <p>{dinosaur.DinoDietType}</p>
+  </div>
+})
 
       return(
-        // if (!this.props.paddockInfo) return null;
+
 
         <>
         <div className="paddock-guests-title">
@@ -28,7 +25,7 @@ class PaddockGuests extends Component {
         </>
       )
 
-    }
+
   }
 
   export default PaddockGuests
