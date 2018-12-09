@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeaderNav_homeContainer =() => {
+const HeaderNav_HomeContainer =() => {
 
 
   return(
@@ -25,4 +25,4 @@ const HeaderNav_homeContainer =() => {
   )
 }
 
-export default HeaderNav_homeContainer;
+export default HeaderNav_HomeContainer;

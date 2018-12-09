@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
- 
+
 
 
 class DisplayContainer extends Component{
@@ -11,8 +11,10 @@ class DisplayContainer extends Component{
   }
 
   render(){
-
+      return <p>Display Container says hello</p>
   }
 
 ////
 }
+
+export default DisplayContainer;
