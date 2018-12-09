@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: white;
+  width: 80%;
+  margin: auto;
+}
+
+.navbar a{
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-family: verdana;
+    font-size: 15px;
+
+}
+
+.navbar {
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+.dinosaurs_list{
+  text-align: center;
+}
+.paddocks_list{
+  text-align: center;
+}

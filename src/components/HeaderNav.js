@@ -1,11 +1,12 @@
 import React from 'react';
 
-const HeaderNav_homeContainer =() => {
+const HeaderNav =() => {
 
 
   return(
     <>
     <header>
+      <img src="../JAVASIC_PARK_LOGO" alt="logo"/>
       <h1>JAVASIC WORLD</h1>
     </header>
     <nav>
@@ -25,4 +26,4 @@ const HeaderNav_homeContainer =() => {
   )
 }
 
-export default HeaderNav_homeContainer;
+export default HeaderNav;
