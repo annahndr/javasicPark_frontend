@@ -4,12 +4,6 @@ import DisplayContainer from './DisplayContainer';
 
 
 class HomeContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      paddock: {}
-    }
-  }
 
 
 render(){
