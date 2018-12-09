@@ -1,67 +1,68 @@
 import React, {Component} from 'react';
-// import HeaderNav from '../components/HeaderNav.js'
-import DisplayContainer from './DisplayContainer.js'
-import PaddocksList from '../components/PaddocksList.js'
-import DinosaursList from '../components/DinosaursList.js'
-import './homeContainer.css';
+import DisplayContainer from './DisplayContainer';
+import HeaderNav from '../components/Navbar';
+import Request from '../helpers/request.js';
 
-
-class HomeContaner extends Component {
-  constructor() {
-    super();
-    this.state = { page: null };
-
-    this.gotoHome = this.gotoHome.bind(this);
-    this.gotoDino = this.gotoDino.bind(this);
-    this.gotoPaddock = this.gotoPaddock.bind(this);
+class HomeContainer extends Component {
+constructor() {
+  super();
+  this.state = {
+    maxVisitors: 5,
+    dinosaurs: {},
+    paddocks: {},
+    visitors: {},
+    paddock:{}//wouldn't actually be here
   }
-
-  render() {
-    const child = this.pageComponent();
-    return (
-      <>
-      <header className="header">
-        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
-        <img src="./images/JAVASIC_LOGO.png" alt="logo" height="100" width="600"/>
-        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
-      </header>
-      <div className="navbar">
-        <a onClick={this.gotoHome}>Home</a>
-        <a onClick={this.gotoDino}>Dinosaurs</a>
-        <a onClick={this.gotoPaddock}>Paddock</a>
-      </div>
-      <div>
-        {child}
-      </div>
-      </>
-    );
+  this.getDinosaurs = this.getDinosaurs.bind(this);
+  this.getPaddocks = this.getPaddocks.bind(this);
+  this.getVisitors = this.getVisitors.bind(this);
+  this.getPaddock = this.getPaddock.bind(this);
+  this.getNumberOfVisitors = this.getNumberOfVisitors.bind(this)
+}
+getNumberOfVisitors(){
+  return this.visitors.length;
+}
+getPaddock(){
+    let request = new Request()
+    request.get('/api/paddocks/1')
+    .then(data => {this.setState({paddock: data})
+    console.log(this.state.paddock);
+  })
+}
+  getDinosaurs(){
+    let request = new Request()
+    request.get('/api/dinosaurs')
+    .then(data => {this.setState({dinosaurs: data._embedded.dinosaurs})
+    console.log(this.state.dinosaurs);
+  })
   }
-
-  pageComponent() {
-    switch (this.state.page) {
-      case "/dinosaurs":
-      return <DinosaursList />;
-      case "/paddocks":
-      return <PaddocksList />;
-      default:
-      return <DisplayContainer />;
-    }
+  getPaddocks(){
+    let request = new Request()
+    request.get('/api/paddocks')
+    .then(data => {this.setState({paddocks: data._embedded.paddocks})
+    console.log(this.state.paddocks);
+  })
   }
-
-  gotoHome(event) {
-    event.preventDefault();
-    this.setState({ page: "/home" });
+  getVisitors(){
+    let request = new Request()
+    request.get('/api/visitors')
+    .then(data => {this.setState({visitors: data._embedded.visitors})
+    console.log(this.state.visitors);
+  })
   }
-
-  gotoDino(event) {
-    event.preventDefault();
-    this.setState({ page: "/dinosaurs" });
+  componentDidMount() {
+    this.getDinosaurs();
+    this.getPaddocks();
+    this.getVisitors()
+    this.getPaddock();
   }
-
-  gotoPaddock(event) {
-    event.preventDefault();
-    this.setState({ page: "/paddocks" });
+render(){
+    console.log("render started");
+  return (
+    <>
+      <DisplayContainer paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks}/>
+    </>
+    )
   }
 }
-
-export default HomeContaner;
+ export default HomeContainer;

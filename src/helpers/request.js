@@ -8,15 +8,15 @@ class Request {
 
  delete(url){
    return fetch(url, {
-     method: “DELETE”,
-     headers: {“Content-Type”: “application/json”}
+     method: "DELETE",
+     headers: {"Content-Type": "application/json"}
    })
  }
 
  post(url, payload){
    return fetch(url, {
-     method: “POST”,
-     headers: {“Content-Type”: “application/json”},
+     method: "POST",
+     headers: {"Content-Type": "application/json"},
      body: JSON.stringify(payload)
    })
  }
