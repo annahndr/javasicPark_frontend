@@ -7,8 +7,8 @@ import '../containers/homeContainer.css';
 
 
 class Navbar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { page: null };
 
     this.gotoHome = this.gotoHome.bind(this);
@@ -43,7 +43,7 @@ class Navbar extends Component {
   pageComponent() {
     switch (this.state.page) {
       case "/dinosaurs":
-      return <DinosaursList dinoList={this.state.page}/>;
+      return <DinosaursList dinoList = {this.props.dinosaurs} />;
       case "/paddocks":
       return <PaddocksList />;
       default:

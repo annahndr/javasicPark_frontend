@@ -34,6 +34,7 @@ onPaddockSelected(id){
         <div className="paddock-info">
         <PaddockGuests paddockInfo = {this.state.paddock}/>
         </div>
+
       </div>
       </>
     )

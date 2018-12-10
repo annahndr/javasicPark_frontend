@@ -1,11 +1,35 @@
 import React from "react";
-import Dinosaurs from './Dinosaurs.js';
+import DinosaurListItem from './DinosaurListItem.js';
+import Request from '../helpers/request';
 
-const DinosaursList = (props) => (
-  <div className="dinosaurs_list">
-    <p>All dinosaurs</p>
-    <Dinosaurs />
-  </div>
-);
+const DinosaursList = (props) => {
 
+  if(!props.dinoList) return null;
+
+  function deleteDino(id){
+    const url = '/api/dinosaurs' + id;
+    let request = new Request();
+    request.delete(url).then(() => {
+      window.location = '/dinosaurs'
+    })
+  }
+
+
+
+return (
+<>
+<table>
+<thead>
+  <tr>
+    <th>Name</th><th>Species</th><th>Diet</th><th>Image</th><th>Paddock</th>
+  </tr>
+</thead>
+
+    <DinosaurListItem handleDelete = {deleteDino} dinosaurs = {props.dinoList}/>
+  
+  </table>
+</>
+
+)
+}
 export default DinosaursList;
