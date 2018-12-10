@@ -1,6 +1,6 @@
 import React from "react";
 
-const PaddockListItem = ({paddock, handleFeed}) => {
+const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
 
   if(!paddock) return null;
 
@@ -9,6 +9,11 @@ const PaddockListItem = ({paddock, handleFeed}) => {
     console.log(paddock);
     handleFeed(paddock, paddock.id)
 
+  }
+
+  function onActivate(){
+    paddock.activate = true
+    handleActivate(paddock)
   }
 
    return (
@@ -33,7 +38,7 @@ const PaddockListItem = ({paddock, handleFeed}) => {
          <button onClick={onFeed}>Feed</button>
        </td>
        <td>
-         <button>Activate</button>
+         <button onClick={onActivate}>Activate</button>
        </td>
        <td>
          <button>Deactivate</button>

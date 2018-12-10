@@ -2,6 +2,8 @@ import React from "react";
 import PaddockListItem from './PaddockListItem.js';
 import Request from '../helpers/request'
 
+//In order to change table row colour, I think we need PaddocksList to have a state, so that on a click it can be re-rendered
+// style={{background:this.state.color}} added to table row
 const PaddocksList = (props) => {
 
   if (!props.paddockList) return null;
@@ -11,8 +13,8 @@ const PaddocksList = (props) => {
     return (
 
       <>
-      <tr key={index} className="table-row">
-      <PaddockListItem paddock = {paddock} handleFeed = {handleFeed}/>
+      <tr key={index} className="table-row" >
+      <PaddockListItem paddock = {paddock} handleFeed = {handleFeed} handleActivate={handleActivate}/>
       </tr>
       </>
 
@@ -25,7 +27,23 @@ function handleFeed(paddock){
   let request = new Request()
   request.patch(url, paddock).then(() => {
     props.getPaddocks()
-  })
+    // setTimeout(returnToUnfed(paddock), 3000)
+    })
+  }
+
+
+// function returnToUnfed(paddock){
+//   paddock.fed = false
+//   const url = '/api/paddocks/' + paddock.id;
+//   let request = new Request()
+//   request.patch(url, paddock).then(() => {
+//     props.getPaddocks()
+//   })
+//
+// }
+
+function handleActivate(paddock){
+
 }
 
   return (
