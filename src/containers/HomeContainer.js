@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import DisplayContainer from './DisplayContainer';
-import HeaderNav from '../components/Navbar';
+import Navbar from '../components/Navbar';
 import Request from '../helpers/request.js';
 
 class HomeContainer extends Component {
@@ -60,7 +60,7 @@ render(){
     console.log("render started");
   return (
     <>
-      <DisplayContainer paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks}/>
+      <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks}/>
     </>
     )
   }

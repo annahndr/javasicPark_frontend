@@ -43,7 +43,7 @@ class Navbar extends Component {
   pageComponent() {
     switch (this.state.page) {
       case "/dinosaurs":
-      return <DinosaursList />;
+      return <DinosaursList dinoList={this.state.page}/>;
       case "/paddocks":
       return <PaddocksList />;
       default:

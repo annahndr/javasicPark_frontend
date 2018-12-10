@@ -12,6 +12,7 @@ const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index
       <p>Name: {dinosaur.name}</p>
       <p>Species: {dinosaur.dinoSpecies}</p>
       <p>Diet: {dinosaur.dinoDietType}</p>
+      <img src={dinosaur.dinoImage}/>
     </div>
   )
 })

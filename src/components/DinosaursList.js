@@ -1,7 +1,7 @@
 import React from "react";
 import Dinosaurs from './Dinosaurs.js';
 
-const DinosaursList = () => (
+const DinosaursList = (props) => (
   <div className="dinosaurs_list">
     <p>All dinosaurs</p>
     <Dinosaurs />
