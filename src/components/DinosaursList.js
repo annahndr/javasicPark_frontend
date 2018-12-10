@@ -38,8 +38,8 @@ return (
 </thead>
 <tbody>
 
-    <DinosaurListItem handleDelete = {deleteDino} dinosaurs = {props.dinoList}/>
-
+    {dinos}
+</tbody>
   </table>
 </>
 

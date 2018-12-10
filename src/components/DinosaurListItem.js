@@ -24,7 +24,7 @@ return(
         <img src = {dino.dinoImage}/>
       </td>
       <td>
-        {dino.paddock.name}
+          {dino.paddock.name}
       </td>
       <td>
         <button onClick = {deleteDinoSelected}>DELETE</button>
