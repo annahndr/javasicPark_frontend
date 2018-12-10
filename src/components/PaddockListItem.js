@@ -1,8 +1,15 @@
 import React from "react";
 
-const PaddockListItem = ({paddock}) => {
+const PaddockListItem = ({paddock, handleFeed}) => {
 
   if(!paddock) return null;
+
+  function onFeed(){
+    paddock.fed = true
+    console.log(paddock);
+    handleFeed(paddock, paddock.id)
+    
+  }
 
    return (
 
@@ -23,7 +30,7 @@ const PaddockListItem = ({paddock}) => {
          {paddock.fed.toString()}
        </td>
        <td>
-         <button>Feed</button>
+         <button onClick={onFeed}>Feed</button>
        </td>
        <td>
          <button>Activate</button>

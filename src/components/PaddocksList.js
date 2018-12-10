@@ -1,5 +1,6 @@
 import React from "react";
 import PaddockListItem from './PaddockListItem.js';
+import Request from '../helpers/request'
 
 const PaddocksList = (props) => {
 
@@ -11,13 +12,19 @@ const PaddocksList = (props) => {
 
       <>
       <tr key={index} className="table-row">
-      <PaddockListItem paddock = {paddock}/>
+      <PaddockListItem paddock = {paddock} handleFeed = {handleFeed}/>
       </tr>
       </>
 
     )
 }
   )
+
+function handleFeed(paddock){
+  const url = '/api/paddocks/' + paddock.id;
+  let request = new Request()
+  request.put(url, paddock)
+}
 
   return (
     <table id="table">
