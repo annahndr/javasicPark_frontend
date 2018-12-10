@@ -8,7 +8,7 @@ class DisplayContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-    paddock: {}
+    paddock: []
   }
   this.onPaddockSelected = this.onPaddockSelected.bind(this)
   }

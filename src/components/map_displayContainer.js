@@ -4,7 +4,7 @@ const Map_displayContainer = () => {
 
   return (
     <div className="map-container">
-      <img src="../../public/images/isla_nublar.jpg" usemap="#image-map"/>
+      <img src="../../public/images/isla_nublar.jpg" usemap="#image-map">
       <map name="image-map">
         <area target="" alt="" title="" href="" coords="82,111,312,269" shape="rect"/>
         <area target="" alt="" title="" href="" coords="333,98,569,288" shape="rect"/>
