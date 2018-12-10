@@ -1,16 +1,12 @@
 import React from "react";
 
-const PaddockListItem = (props) => {
+const PaddockListItem = ({paddock}) => {
 
-  if(!props.paddocks) return null;
-console.log(props);
-
-  const paddocks = props.paddocks.map((paddock, index) =>{
+  if(!paddock) return null;
 
    return (
 
-     <tr key={paddock.id} className="single-paddock">
-
+     <>
        <td>
          {paddock.name}
        </td>
@@ -18,13 +14,13 @@ console.log(props);
          {paddock.paddockType}
        </td>
        <td>
-         {paddock.maxNoOfDinosaurs}
+         {paddock.maxNoDinosaurs}
        </td>
        <td>
          {paddock.dinosaurs}
        </td>
        <td>
-         {paddock.fed}
+         {paddock.fed.toString()}
        </td>
        <td>
          <button>Feed</button>
@@ -36,15 +32,10 @@ console.log(props);
          <button>Deactivate</button>
        </td>
 
-     </tr>
+       </>
    )
-  }
-  )
-   return  (
-     <tbody>
-     {paddocks}
-     </tbody>
-   )
+
+
   }
 
 

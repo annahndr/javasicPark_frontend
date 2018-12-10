@@ -5,29 +5,41 @@ const PaddocksList = (props) => {
 
   if (!props.paddockList) return null;
 
-return (
+  const paddocks = props.paddockList.map((paddock, index) =>{
 
-<>
-<table id="table">
-<thead>
- <tr>
-   <th>Name</th>
-   <th>Type</th>
-   <th>Max no.</th>
-   <th>Dino List</th>
-   <th>Fed today?</th>
-   <th>Feed</th>
-   <th>Activate Paddock</th>
-   <th>Deactivate Paddock</th>
- </tr>
-</thead>
+    return (
 
-   <PaddockListItem paddocks = {props.paddockList}/>
+      <>
+      <tr key={index} className="table-row">
+      <PaddockListItem paddock = {paddock}/>
+      </tr>
+      </>
 
- </table>
-</>
+    )
+}
+  )
 
-)
+  return (
+    <table id="table">
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Max no.</th>
+            <th>Dino List</th>
+            <th>Fed today?</th>
+            <th>Feed</th>
+            <th>Activate Paddock</th>
+            <th>Deactivate Paddock</th>
+          </tr>
+        </thead>
+    <tbody>
+      {paddocks}
+    </tbody>
+    </table>
+  )
+
 }
 
 
