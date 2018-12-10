@@ -45,7 +45,7 @@ class Navbar extends Component {
       case "/dinosaurs":
       return <DinosaursList getDinosaurs = {this.props.getDinosaurs} dinoList = {this.props.dinosaurs} />;
       case "/paddocks":
-      return <PaddocksList paddockList = {this.props.paddocks} />;
+      return <PaddocksList paddockList = {this.props.paddocks} getPaddocks={this.props.getPaddocks} />;
       default:
       return <DisplayContainer />;
     }

@@ -24,7 +24,7 @@ function handleFeed(paddock){
   const url = '/api/paddocks/' + paddock.id;
   let request = new Request()
   request.put(url, paddock).then(() => {
-    window.location = '/api/paddocks'
+    props.getPaddocks()
   })
 }
 
