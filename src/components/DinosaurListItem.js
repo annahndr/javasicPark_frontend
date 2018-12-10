@@ -1,23 +1,16 @@
 import React from 'react';
 import Request from '../helpers/request'
-import '../containers/displayContainer.css';
+const DinosaurListItem = ({dino, handleDelete})=> {
 
+if(!dino) return null;
 
-const DinosaurListItem = (props)=> {
-
-if(!props.dinosaurs) return null;
 
 function deleteDinoSelected(){
-
-  props.deleteDino(props.dinosaurs.id)
+  handleDelete(dino.id)
 }
 
-const dinos = props.dinosaurs.map((dino, index) =>{
-
-  return (
-
-    <tr key={dino.id} className="single-dino">
-
+return(
+  <>
       <td>
         {dino.name}
       </td>
@@ -28,24 +21,18 @@ const dinos = props.dinosaurs.map((dino, index) =>{
         {dino.dinoDietType}
       </td>
       <td>
-        {dino.dinoImage}
+        <img src = {dino.dinoImage}/>
       </td>
       <td>
-        {dino.paddock.name}
+          {dino.paddock.name}
       </td>
       <td>
         <button onClick = {deleteDinoSelected}>DELETE</button>
       </td>
-
-    </tr>
-  )
-}
+    </>
 )
-  return  (
-    <tbody>
-    {dinos}
-    </tbody>
-  )
+
+
 }
 
 export default DinosaurListItem;

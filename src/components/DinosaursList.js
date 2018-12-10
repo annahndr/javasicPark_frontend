@@ -9,13 +9,23 @@ const DinosaursList = (props) => {
   if(!props.dinoList) return null;
 
   function deleteDino(id){
-    const url = '/api/dinosaurs' + id;
+    const url = '/api/dinosaurs/' + id;
     let request = new Request();
     request.delete(url).then(() => {
-      window.location = '/dinosaurs'
-    })
+      }
+    )
   }
 
+  const dinos = props.dinoList.map((dino, index) =>{
+return(
+      <tr key={dino.id} className="single-dino">
+
+        <DinosaurListItem handleDelete = {deleteDino} dino={dino}/>
+
+      </tr>
+    )
+  }
+)
 
 
 return (
@@ -26,9 +36,10 @@ return (
     <th>Name</th><th>Species</th><th>Diet</th><th>Image</th><th>Paddock</th><th>Edit</th>
   </tr>
 </thead>
+<tbody>
 
-    <DinosaurListItem handleDelete = {deleteDino} dinosaurs = {props.dinoList}/>
-
+    {dinos}
+</tbody>
   </table>
 </>
 

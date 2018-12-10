@@ -60,7 +60,7 @@ render(){
     console.log("render started");
   return (
     <>
-      <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks}/>
+      <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs}/>
     </>
     )
   }
