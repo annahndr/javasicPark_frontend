@@ -1,11 +1,34 @@
 import React from "react";
-import Paddocks from './Paddocks.js';
+import PaddockListItem from './PaddockListItem.js';
 
-const PaddocksList = () => (
-  <div className="paddocks_list">
-    <p>All Paddocks</p>
-    <Paddocks/>
-  </div>
-);
+const PaddocksList = (props) => {
+
+  if (!props.paddockList) return null;
+
+return (
+
+<>
+<table id="table">
+<thead>
+ <tr>
+   <th>Name</th>
+   <th>Type</th>
+   <th>Max no.</th>
+   <th>Dino List</th>
+   <th>Fed today?</th>
+   <th>Feed</th>
+   <th>Activate Paddock</th>
+   <th>Deactivate Paddock</th>
+ </tr>
+</thead>
+
+   <PaddockListItem paddocks = {props.paddockList}/>
+
+ </table>
+</>
+
+)
+}
+
 
 export default PaddocksList;

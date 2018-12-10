@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Dinosaurs from './Dinosaurs';
 
 const PaddockGuests = (props)=>{
 if (!props.paddockInfo._embedded) return null;
