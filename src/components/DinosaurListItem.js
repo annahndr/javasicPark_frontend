@@ -1,5 +1,8 @@
 import React from 'react';
 import Request from '../helpers/request'
+import '../containers/displayContainer.css';
+
+
 const DinosaurListItem = (props)=> {
 
 if(!props.dinosaurs) return null;

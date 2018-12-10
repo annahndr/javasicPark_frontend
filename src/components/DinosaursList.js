@@ -1,6 +1,8 @@
 import React from "react";
 import DinosaurListItem from './DinosaurListItem.js';
 import Request from '../helpers/request';
+import '../containers/displayContainer.css';
+
 
 const DinosaursList = (props) => {
 
@@ -18,15 +20,15 @@ const DinosaursList = (props) => {
 
 return (
 <>
-<table>
+<table id="table">
 <thead>
   <tr>
-    <th>Name</th><th>Species</th><th>Diet</th><th>Image</th><th>Paddock</th>
+    <th>Name</th><th>Species</th><th>Diet</th><th>Image</th><th>Paddock</th><th>Edit</th>
   </tr>
 </thead>
 
     <DinosaurListItem handleDelete = {deleteDino} dinosaurs = {props.dinoList}/>
-  
+
   </table>
 </>
 
