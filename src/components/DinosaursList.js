@@ -12,6 +12,7 @@ const DinosaursList = (props) => {
     const url = '/api/dinosaurs/' + id;
     let request = new Request();
     request.delete(url).then(() => {
+      props.getDinosaurs()
       }
     )
   }
