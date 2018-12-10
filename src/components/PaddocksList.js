@@ -23,7 +23,7 @@ const PaddocksList = (props) => {
 function handleFeed(paddock){
   const url = '/api/paddocks/' + paddock.id;
   let request = new Request()
-  request.put(url, paddock).then(() => {
+  request.patch(url, paddock).then(() => {
     props.getPaddocks()
   })
 }
