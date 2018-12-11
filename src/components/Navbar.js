@@ -18,6 +18,7 @@ class Navbar extends Component {
     this.gotoDino = this.gotoDino.bind(this);
     this.gotoVisitors = this.gotoVisitors.bind(this);
     this.gotoPaddock = this.gotoPaddock.bind(this);
+    this.gotoEvacuate = this.gotoEvacuate.bind(this);
   }
 // onPaddockSelected(id){
 //   console.log("homecontainer paddockselected", id);
@@ -36,7 +37,7 @@ class Navbar extends Component {
         <a onClick={this.gotoDino}>Dinosaurs</a>
         <a onClick={this.gotoPaddock}>Paddocks</a>
         <a onClick={this.gotoVisitors}>Visitors</a>
-        <a>EVACUATE</a>
+        <a onCLick={this.gotoEvacuate}>EVACUATE</a>
       </div>
       <div>
         {child}
@@ -54,6 +55,9 @@ class Navbar extends Component {
       return <PaddocksList paddockList = {this.props.paddocks} getPaddocks={this.props.getPaddocks} getPaddocksResetToUnfed={this.props.getPaddocksResetToUnfed}/>;
       case "/visitors":
       return <Visitors visitors={this.getVisitors} visitorCount={this.getNumberOfVisitors}/>;
+      case "/evacuate":
+      return <Visitors visitors={this.getVisitors} visitorCount={this.getNumberOfVisitors}/>;
+
       default:
       return <DisplayContainer />;
     }
@@ -76,6 +80,10 @@ class Navbar extends Component {
   gotoVisitors(event) {
     event.preventDefault();
     this.setState({ page: "/visitors" });
+  }
+  gotoEvacuate(event) {
+    event.preventDefault();
+    this.setState({ page: "/evacuate" });
   }
 }
 

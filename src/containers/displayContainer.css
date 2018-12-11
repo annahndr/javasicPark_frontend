@@ -69,6 +69,43 @@ tbody {
   border: 1px solid black;
 
 }
+.visitor-buttons{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.visitor-number{
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  border: 3px solid black;
+  justify-content: space-around;
+}
+
+
+.increment-button {
+  font-size: 15px;
+  padding: 5px;
+  border: 2px solid red;
+  color: black;
+  font-weight: bold;
+}
+.evac-button {
+  font-size: 30px;
+  padding: 5px;
+  border: 3px solid black;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+}
 
 .table-row-paddockState-true {
   color: green;
