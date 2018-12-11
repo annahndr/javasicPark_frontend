@@ -17,11 +17,11 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
   }
 
   function onDeactivate(){
-    if(paddock.getDinoCount() <1){
+    if(paddock.dinosaurs.length <1){
       paddock.activated = false
       handleActivate(paddock)
     }
-    
+
   }
 
    return (
