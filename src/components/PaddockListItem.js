@@ -5,10 +5,11 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
   if(!paddock) return null;
 
   function onFeed(){
-    paddock.fed = true
-    console.log(paddock);
-    handleFeed(paddock)
-
+    if(paddock.dinosaurs.length > 0){
+      paddock.fed = true
+      console.log(paddock);
+      handleFeed(paddock)
+    }
   }
 
   function onActivate(){
@@ -21,42 +22,51 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
       paddock.activated = false
       handleActivate(paddock)
     }
-    
-  }
-
-   return (
-
-     <>
-       <td>
-         {paddock.name}
-       </td>
-       <td>
-         {paddock.paddockType}
-       </td>
-       <td>
-         {paddock.maxNoDinosaurs}
-       </td>
-       <td>
-         {paddock.dinosaurs}
-       </td>
-       <td>
-         {paddock.fed.toString()}
-       </td>
-       <td>
-         <button onClick={onFeed}>Feed</button>
-       </td>
-       <td>
-         <button onClick={onActivate}>Activate</button>
-       </td>
-       <td>
-         <button onClick ={onDeactivate}>Deactivate</button>
-       </td>
-
-       </>
-   )
-
 
   }
+
+  const paddockDinos = paddock.dinosaurs.map((dino, index) => {
+    console.log(dino);
+    return(
+      <>
+      {dino + " " + "/" + " " }
+      </>
+
+
+    )
+  })
+
+  return (
+    <>
+    <td>
+      {paddock.name}
+    </td>
+    <td>
+      {paddock.paddockType}
+    </td>
+    <td>
+      {paddock.maxNoDinosaurs}
+    </td>
+    <td>
+      {paddockDinos}
+    </td>
+    <td>
+      {paddock.fed.toString()}
+    </td>
+    <td>
+      <button onClick={onFeed}>Feed</button>
+    </td>
+    <td>
+      <button onClick={onActivate}>Activate</button>
+    </td>
+    <td>
+      <button onClick ={onDeactivate}>Deactivate</button>
+    </td>
+    </>
+  )
+
+
+}
 
 
 

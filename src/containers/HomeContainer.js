@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DisplayContainer from './DisplayContainer';
 import Navbar from '../components/Navbar';
+import Visitors from '../components/Visitors';
 import Request from '../helpers/request.js';
 
 class HomeContainer extends Component {
@@ -61,7 +62,20 @@ render(){
     console.log("render started");
   return (
     <>
+<<<<<<< HEAD
       <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs} getPaddocks={this.getPaddocks}/>
+=======
+      <Navbar
+          getPaddock = {this.getPaddock}
+          paddock = {this.state.paddock}
+          dinosaurs = {this.state.dinosaurs}
+          paddocks = {this.state.paddocks}
+          getDinosaurs = {this.getDinosaurs}
+          getPaddocks={this.getPaddocks}
+          visitors={this.getVisitors}
+          visitorCount={this.getNumberOfVisitors}
+          />
+>>>>>>> develop
     </>
     )
   }
