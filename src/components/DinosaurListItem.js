@@ -21,10 +21,10 @@ return(
         {dino.dinoDietType}
       </td>
       <td>
-        <img src = {dino.dinoImage}/>
+        <img className="dino-thumbnail" src = {dino.dinoImage}/>
       </td>
       <td>
-          
+
       </td>
       <td>
         <button onClick = {deleteDinoSelected}>DELETE</button>

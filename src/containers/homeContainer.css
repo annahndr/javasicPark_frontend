@@ -5,6 +5,7 @@
   color: white;
   width: 80%;
   margin: auto;
+  margin-top: 20px;
   border: 2px solid red;
 
 }
@@ -32,6 +33,7 @@
 
 .navbar a:hover {
     color: red;
+    cursor: pointer;
 }
 
 .dinosaurs_list{

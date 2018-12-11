@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Request from '../helpers/request';
 import DinosaursList from './DinosaursList';
+import '../containers/displayContainer.css';
 
 class DinosaurForm extends Component {
 
@@ -118,7 +119,8 @@ render(){
   return(
     <form className="comment-form" onSubmit = {this.handleSubmit}>
       <input type="text" placeholder="Dinosaur Name" name = "name"/>
-        <select name="dinoSpecies">
+        <select className="dino-dropdown" name="dinoSpecies">
+          <option>Choose Dinosaur</option>
           <option>Tyrranosaurus-Rex</option>
           <option>Diplodaucus</option>
           <option>Velocerpator</option>
@@ -127,7 +129,7 @@ render(){
 
         <input type="text" placeholder="Image Path" name = "dinoImage"/>
 
-      <input type="submit" value = "ADD DINO" />
+      <input className="addDinoButton" type="submit" value = "ADD DINO" />
     </form>
     )
   }
