@@ -1,9 +1,9 @@
 .map{
-  /* border: 1px solid black; */
+  border: 5px solid green;
 }
 .paddock-info{
-  border: 1px solid black;
-  /* margin-left: 30px; */
+  border: 5px solid green;
+  padding: 30px;
 }
 .display-wrapper{
   display: flex;
