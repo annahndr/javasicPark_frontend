@@ -12,8 +12,16 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
   }
 
   function onActivate(){
-    paddock.activate = true
+    paddock.activated = true
     handleActivate(paddock)
+  }
+
+  function onDeactivate(){
+    if(paddock.getDinoCount() <1){
+      paddock.activated = false
+      handleActivate(paddock)
+    }
+    
   }
 
    return (
@@ -41,7 +49,7 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
          <button onClick={onActivate}>Activate</button>
        </td>
        <td>
-         <button>Deactivate</button>
+         <button onClick ={onDeactivate}>Deactivate</button>
        </td>
 
        </>
