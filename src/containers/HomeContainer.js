@@ -62,9 +62,6 @@ render(){
     console.log("render started");
   return (
     <>
-<<<<<<< HEAD
-      <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs} getPaddocks={this.getPaddocks}/>
-=======
       <Navbar
           getPaddock = {this.getPaddock}
           paddock = {this.state.paddock}
@@ -75,7 +72,6 @@ render(){
           visitors={this.getVisitors}
           visitorCount={this.getNumberOfVisitors}
           />
->>>>>>> develop
     </>
     )
   }

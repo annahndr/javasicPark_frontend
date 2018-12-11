@@ -48,18 +48,7 @@ function filteredPaddocksCarnivore(){
 
       )
 }
-//
-// const paddockNames = filteredPaddocks.map((paddock, index) =>{
-//
-// return(
-//     <option id = {paddock.id} value = {paddock._links.self.href} key={paddock.id} className="paddock" onSelect = {getValue}>
-//
-//       {paddock.name}
-//
-//     </option>
-//     )
-//   }
-// )
+
 
 let filteredPaddocks = dino.dinoDietType==="Herbivore" ? filteredPaddocksHerbivore():filteredPaddocksCarnivore();
 
@@ -78,7 +67,8 @@ return(
         <img src = {dino.dinoImage}/>
       </td>
       <td>
-      {dino.paddock.name}
+          {dino.paddock.name}
+
       <form className="paddock-change" onSubmit = {addUpdatePaddock}>
           <select name="paddock">
             {filteredPaddocks}
