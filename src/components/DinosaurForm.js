@@ -37,10 +37,15 @@ getDinosaursInPaddock(paddock){
 }
 
 validateCanAdd(dinosaur){
+  debugger;
+  // if(!this.props.paddock)return null;
+  console.log("validate sees paddock",this.props.paddock);
+
   const dietTypesMatch = dinosaur.dinoDietType===this.props.paddock.paddockType;
   const dietTypeIsHerbivore = dinosaur.dinoDietType==="Herbivore"
   const dietTypeIsCarnivore = dinosaur.dinoDietType==="Carnivore"
-  const sameTypeOfCarnivore = this.props.paddock._links.dinosaurs.includes(dinosaur.dinoSpecies)
+  const sameTypeOfCarnivore = this.props.paddock._embedded.dinosaurs.includes(dinosaur.dinoSpecies)
+  console.log(sameTypeOfCarnivore);
   const dinosaurArrayEmpty = this.props.paddock.dinoCount===0
 
   return ((dietTypesMatch&&dietTypeIsHerbivore)||(dietTypesMatch&&dietTypeIsCarnivore&&(sameTypeOfCarnivore||dinosaurArrayEmpty)))
@@ -67,13 +72,15 @@ handleSubmit(evt){
     }
 
     const id = this.getID(evt)
-    const paddock = this.props.getPaddock(id);
-    if(!this.props.paddock._embedded)return null;
-    const dinoList = this.getDinosaursInPaddock(paddock)
-
-
-    console.log(this.props.paddock);
+    this.props.getPaddock(id)
+    if(!this.props.paddock) return null;
     const canAdd = this.validateCanAdd(dinosaur)
+
+    // const dinoList = this.getDinosaursInPaddock(paddock)
+
+
+
+
 
     if(canAdd===true){
       this.handleDinosaurPost(dinosaur)
