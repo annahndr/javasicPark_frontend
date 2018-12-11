@@ -127,7 +127,7 @@ render(){
 
         <input type="text" placeholder="Image Path" name = "dinoImage"/>
 
-      <input type="submit" value = "Post" />
+      <input type="submit" value = "ADD DINO" />
     </form>
     )
   }

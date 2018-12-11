@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 const PaddockGuests = (props)=>{
 if (!props.paddockInfo._embedded) return null;
-
+// if (props.paddockInfo._embedded.dinosaurs.length() =0) return (<p>hello</p>)
 
 const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index) => {
     return(
@@ -15,6 +15,7 @@ const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index
     </div>
   )
 })
+
       return(
         <>
         <div className="paddock-guests-title">

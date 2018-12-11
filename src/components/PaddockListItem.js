@@ -5,10 +5,11 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
   if(!paddock) return null;
 
   function onFeed(){
+    if(paddock.dinosaurs.length > 0){
     paddock.fed = true
     console.log(paddock);
     handleFeed(paddock)
-
+}
   }
 
   function onActivate(){
@@ -21,11 +22,10 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
       paddock.activated = false
       handleActivate(paddock)
     }
-    
+
   }
 
    return (
-
      <>
        <td>
          {paddock.name}

@@ -60,6 +60,15 @@ tbody {
   margin: auto;
   /* border: 1px solid black; */
 }
+.comment-form{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+
+}
 
 .table-row-paddockState-true {
   color: green;
