@@ -10,7 +10,6 @@ class DinosaurForm extends Component {
       name: '',
       dinoSpecies: '',
       dinoDietType: '',
-      paddock: null,
       dinoImage: ''
   }
   this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,6 +17,7 @@ class DinosaurForm extends Component {
   this.getID = this.getID.bind(this)
   this.validateCanAdd = this.validateCanAdd.bind(this)
   this.getDinosaursInPaddock=this.getDinosaursInPaddock.bind(this)
+  this.addDietType = this.addDietType.bind(this)
 
 }
 
@@ -44,11 +44,11 @@ validateCanAdd(dinosaur){
   const dietTypesMatch = dinosaur.dinoDietType===this.props.paddock.paddockType;
   const dietTypeIsHerbivore = dinosaur.dinoDietType==="Herbivore"
   const dietTypeIsCarnivore = dinosaur.dinoDietType==="Carnivore"
-  const sameTypeOfCarnivore = this.props.paddock._embedded.dinosaurs.includes(dinosaur.dinoSpecies)
-  console.log(sameTypeOfCarnivore);
+  // const sameTypeOfCarnivore = this.props.paddock.dinosaurs.includes(dinosaur.dinoSpecies)
+  // console.log(sameTypeOfCarnivore);
   const dinosaurArrayEmpty = this.props.paddock.dinoCount===0
-
-  return ((dietTypesMatch&&dietTypeIsHerbivore)||(dietTypesMatch&&dietTypeIsCarnivore&&(sameTypeOfCarnivore||dinosaurArrayEmpty)))
+  console.log(dinosaurArrayEmpty);
+  return ((dietTypesMatch&&dietTypeIsHerbivore)||((dietTypesMatch&&dietTypeIsCarnivore)))
 }
 
   handleDinosaurPost(dinosaur){
@@ -58,33 +58,38 @@ validateCanAdd(dinosaur){
       }
     )
   }
-
+addDietType(dinosaur){
+  let result=null;
+  if(dinosaur ==="Tyrranosaurus-Rex"||dinosaur ==="Velocerpator"){
+    result="Carnivore"
+  }else(result = "Herbivore")
+  return result
+}
 handleSubmit(evt){
   const option = evt;
     evt.preventDefault()
     const dinosaur = {
       "name": evt.target.name.value,
       "dinoSpecies": evt.target.dinoSpecies.value,
-      "dinoDietType": evt.target.dinoDietType.value,
-      "paddock": evt.target.paddock.value,
+      "dinoDietType": this.addDietType(evt.target.dinoSpecies.value),
       "dinoImage": evt.target.dinoImage.value
 
     }
 
-    const id = this.getID(evt)
-    this.props.getPaddock(id)
-    if(!this.props.paddock) return null;
-    const canAdd = this.validateCanAdd(dinosaur)
-
-    // const dinoList = this.getDinosaursInPaddock(paddock)
-
-
-
-
-
-    if(canAdd===true){
+    // const id = this.getID(evt)
+    // this.props.getPaddock(id)
+    // if(!this.props.paddock) return null;
+    // const canAdd = this.validateCanAdd(dinosaur)
+    //
+    // // const dinoList = this.getDinosaursInPaddock(paddock)
+    //
+    //
+    //
+    //
+    //
+    // if(canAdd===true){
       this.handleDinosaurPost(dinosaur)
-  }
+  // }
 
 }
 
@@ -94,17 +99,22 @@ handleSubmit(evt){
 render(){
   if(!this.props.paddocks) return null;
 
-  const paddockNames = this.props.paddocks.map((paddock, index) =>{
-
-  return(
-      <option id = {paddock.id} value = {paddock._links.self.href} key={paddock.id} className="paddock">
-
-        {paddock.name}
-
-      </option>
-      )
-    }
-  )
+  // const paddockNames = this.props.paddocks.map((paddock, index) =>{
+  //
+  // return(
+  //     <option id = {paddock.id} value = {paddock._links.self.href} key={paddock.id} className="paddock">
+  //
+  //       {paddock.name}
+  //
+  //     </option>
+  //     )
+  //   }
+  // )
+  //
+  // <select name="paddock">
+  //     {paddockNames}
+  // </select>
+  //
   return(
     <form className="comment-form" onSubmit = {this.handleSubmit}>
       <input type="text" placeholder="Dinosaur Name" name = "name"/>
@@ -114,13 +124,7 @@ render(){
           <option>Velocerpator</option>
           <option>Stegosaurus</option>
         </select>
-        <select name="dinoDietType">
-          <option>Herbivore</option>
-          <option>Carnivore</option>
-        </select>
-        <select name="paddock">
-            {paddockNames}
-        </select>
+
         <input type="text" placeholder="Image Path" name = "dinoImage"/>
 
       <input type="submit" value = "Post" />
