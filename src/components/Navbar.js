@@ -41,9 +41,10 @@ class Navbar extends Component {
   }
 
   pageComponent() {
+
     switch (this.state.page) {
       case "/dinosaurs":
-      return <DinosaursList getDinosaurs = {this.props.getDinosaurs} dinoList = {this.props.dinosaurs} />;
+      return <DinosaursList paddock = {this.props.paddock} getPaddock = {this.props.getPaddock} paddocks = {this.props.paddocks} getDinosaurs = {this.props.getDinosaurs} dinoList = {this.props.dinosaurs} />;
       case "/paddocks":
       return <PaddocksList paddockList = {this.props.paddocks} />;
       default:

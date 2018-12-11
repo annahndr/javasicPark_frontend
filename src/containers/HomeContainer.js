@@ -22,11 +22,11 @@ constructor() {
 getNumberOfVisitors(){
   return this.visitors.length;
 }
-getPaddock(){
+getPaddock(id){
     let request = new Request()
-    request.get('/api/paddocks/1')
+    request.get('/api/paddocks/' +id)
     .then(data => {this.setState({paddock: data})
-    console.log(this.state.paddock);
+    console.log("test", this.state.paddock);
   })
 }
   getDinosaurs(){
@@ -54,13 +54,12 @@ getPaddock(){
     this.getDinosaurs();
     this.getPaddocks();
     this.getVisitors()
-    this.getPaddock();
   }
 render(){
     console.log("render started");
   return (
     <>
-      <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs}/>
+      <Navbar getPaddock = {this.getPaddock} paddock = {this.state.paddock}dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs}/>
     </>
     )
   }
