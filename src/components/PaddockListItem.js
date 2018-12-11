@@ -21,7 +21,7 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
       paddock.activated = false
       handleActivate(paddock)
     }
-
+    
   }
 
    return (
