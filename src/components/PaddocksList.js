@@ -27,20 +27,20 @@ function handleFeed(paddock){
   let request = new Request()
   request.patch(url, paddock).then(() => {
     props.getPaddocks()
-    // setTimeout(returnToUnfed(paddock), 3000)
+    setTimeout(() => { returnToUnfed(paddock) }, 5000) // function definition, so that is doesn't happen immediately
     })
   }
 
 
-// function returnToUnfed(paddock){
-//   paddock.fed = false
-//   const url = '/api/paddocks/' + paddock.id;
-//   let request = new Request()
-//   request.patch(url, paddock).then(() => {
-//     props.getPaddocks()
-//   })
-//
-// }
+function returnToUnfed(paddock){
+  paddock.fed = false
+  const url = '/api/paddocks/' + paddock.id;
+  let request = new Request()
+  request.patch(url, paddock).then(() => {
+    props.getPaddocks()
+  })
+
+}
 
 function handleActivate(paddock){
 

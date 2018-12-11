@@ -7,7 +7,7 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
   function onFeed(){
     paddock.fed = true
     console.log(paddock);
-    handleFeed(paddock, paddock.id)
+    handleFeed(paddock)
 
   }
 

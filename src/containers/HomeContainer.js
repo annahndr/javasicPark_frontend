@@ -36,6 +36,7 @@ getPaddock(){
     console.log(this.state.dinosaurs);
   })
   }
+
   getPaddocks(){
     let request = new Request()
     request.get('/api/paddocks')
@@ -43,6 +44,7 @@ getPaddock(){
     console.log(this.state.paddocks);
   })
   }
+
   getVisitors(){
     let request = new Request()
     request.get('/api/visitors')
@@ -60,7 +62,7 @@ render(){
     console.log("render started");
   return (
     <>
-      <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs} getPaddocks={this.getPaddocks}/>
+      <Navbar paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs} getPaddocks={this.getPaddocks} getPaddocksResetToUnfed={this.getPaddocksResetToUnfed}/>
     </>
     )
   }

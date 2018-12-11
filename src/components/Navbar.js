@@ -10,8 +10,7 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: null,
-      tableRowColour: grey
+      page: null
     };
 
     this.gotoHome = this.gotoHome.bind(this);
@@ -48,7 +47,7 @@ class Navbar extends Component {
       case "/dinosaurs":
       return <DinosaursList getDinosaurs = {this.props.getDinosaurs} dinoList = {this.props.dinosaurs} />;
       case "/paddocks":
-      return <PaddocksList paddockList = {this.props.paddocks} getPaddocks={this.props.getPaddocks}) />;
+      return <PaddocksList paddockList = {this.props.paddocks} getPaddocks={this.props.getPaddocks} getPaddocksResetToUnfed={this.props.getPaddocksResetToUnfed}/>;
       default:
       return <DisplayContainer />;
     }
