@@ -99,22 +99,6 @@ handleSubmit(evt){
 render(){
   if(!this.props.paddocks) return null;
 
-  // const paddockNames = this.props.paddocks.map((paddock, index) =>{
-  //
-  // return(
-  //     <option id = {paddock.id} value = {paddock._links.self.href} key={paddock.id} className="paddock">
-  //
-  //       {paddock.name}
-  //
-  //     </option>
-  //     )
-  //   }
-  // )
-  //
-  // <select name="paddock">
-  //     {paddockNames}
-  // </select>
-  //
   return(
     <form className="comment-form" onSubmit = {this.handleSubmit}>
       <input type="text" placeholder="Dinosaur Name" name = "name"/>

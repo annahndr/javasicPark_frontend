@@ -16,11 +16,20 @@ const DinosaursList = (props) => {
       }
     )
   }
+
+  function handlePaddockUpdate(id, dino){
+    const url = '/api/dinosaurs/' + id;
+    let request = new Request();
+    request.patch(url, dino).then(() => {
+      props.getDinosaurs()
+      }
+    )
+  }
   const dinos = props.dinoList.map((dino, index) =>{
 return(
       <tr key={dino.id} className="single-dino">
 
-        <DinosaurListItem handleDelete = {deleteDino} dino={dino}/>
+        <DinosaurListItem handleDelete = {deleteDino} dino={dino} paddocks={props.paddocks} handlePaddockUpdate = {handlePaddockUpdate}/>
 
       </tr>
     )
