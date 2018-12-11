@@ -1,9 +1,12 @@
 .map{
-  border: 5px solid green;
+  border: 5px solid orange;
 }
 .paddock-info{
-  border: 5px solid green;
+  border: 5px solid orange;
   padding: 30px;
+  /* display: flex; */
+  justify-content: center;
+  color: red;
 }
 .display-wrapper{
   display: flex;
@@ -70,11 +73,11 @@ tbody {
 
 }
 .visitor-buttons{
-  width: 80%;
+  width: 50%;
   margin: auto;
   margin-bottom: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .visitor-number{
   width: 50%;
@@ -113,4 +116,13 @@ tbody {
 
 .table-row-paddockState-false {
   color: red;
+}
+
+.dinosaur-short{
+  color: black;
+  font-weight: bold;
+  border: 2px solid black;
+  margin-bottom: 10px;
+  padding: 9px;
+
 }

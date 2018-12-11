@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 const PaddockGuests = (props)=>{
-if (!props.paddockInfo._embedded) return <h2>There are no dinosaurs in this paddock</h2>;
+if (!props.paddockInfo._embedded) return <><h2>There are no dinosaurs in this paddock</h2><img src="./images/sadDino.png" alt="logo" height="auto" width="450px"/></>;
 
 const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index) => {
     return(

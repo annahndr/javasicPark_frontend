@@ -28,9 +28,9 @@ class Navbar extends Component {
     return (
       <>
       <header className="header">
-        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
-        <img src="./images/JAVASIC_LOGO.png" alt="logo" height="100" width="600"/>
-        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
+        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="150" width="auto"/>
+        <img src="./images/JAVASIC_LOGO.png" alt="logo" height="150" width="600"/>
+        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="150" width="auto"/>
       </header>
       <div className="navbar">
         <a onClick={this.gotoHome}>Home</a>
@@ -56,8 +56,7 @@ class Navbar extends Component {
       case "/visitors":
       return <Visitors visitors={this.getVisitors} visitorCount={this.getNumberOfVisitors}/>;
       case "/evacuate":
-      return <Visitors visitors={this.getVisitors} visitorCount={this.getNumberOfVisitors}/>;
-
+      return <Visitors />
       default:
       return <DisplayContainer />;
     }

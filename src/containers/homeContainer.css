@@ -5,6 +5,8 @@
   color: white;
   width: 80%;
   margin: auto;
+  border: 2px solid red;
+
 }
 
 .navbar a{
@@ -25,6 +27,7 @@
     width: 80%;
     margin: auto;
     margin-bottom: 50px;
+    border: 2px solid red;
 }
 
 .navbar a:hover {
