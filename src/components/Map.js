@@ -9,13 +9,12 @@ class Map extends Component {
 handleChange(evt){
   evt.preventDefault()
   this.props.onPaddockSelected(evt.target.getAttribute('title'))
-  console.log(evt.target.getAttribute('title'));
 
 }
   render(){
     return(
       <div className="map-container">
-        <img src="./images/isla_nublar.jpg" useMap="#image-map"/>
+        <img src="./images/isla_nublar.jpg" useMap="#image-map" alt="javasic-park-paddock-map"/>
         <map name="image-map">
           <area alt="Bay View" title= "3" coords="82,111,312,269" shape="rect" onClick = {this.handleChange}/>
           <area alt="Green Hills" title="2" coords="333,98,569,288" shape="rect" onClick = {this.handleChange}/>

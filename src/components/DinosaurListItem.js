@@ -1,5 +1,4 @@
 import React from 'react';
-import Request from '../helpers/request'
 import '../containers/displayContainer.css';
 
 
@@ -13,16 +12,13 @@ function deleteDinoSelected(){
 }
 
 function getValue(evt){
-  console.log("value:", evt.target.value);
   let optionValue = '';
   return optionValue = evt.target.paddock.value
 }
 function addUpdatePaddock(evt){
   evt.preventDefault();
   const paddockLink = getValue(evt)
-  console.log("paddockLink:",paddockLink);
   dino.paddock = paddockLink;
-  console.log("dinosaur:", dino);
   handlePaddockUpdate(dino.id, dino)
 }
 
@@ -78,7 +74,7 @@ return(
         {dino.dinoDietType}
       </td>
       <td>
-        <img className="dino-thumbnail" src = {dino.dinoImage}/>
+        <img className="dino-thumbnail" src = {dino.dinoImage} alt="dino-thumbnail"/>
       </td>
       <td>
         {paddockName()}

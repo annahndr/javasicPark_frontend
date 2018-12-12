@@ -21,10 +21,7 @@ const DinosaursList = (props) => {
   function handlePaddockUpdate(id, dino){
     const url = '/api/dinosaurs/' + id;
     let request = new Request();
-
-    const dinoPaddock = request.get(dino.paddock)
-    console.log("dinoPaddock",dinoPaddock);
-
+    // const dinoPaddock = request.get(dino.paddock)
     request.patch(url, dino).then(() => {
           props.getDinosaurs()
         })

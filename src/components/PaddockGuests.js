@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../containers/displayContainer.css';
 
 
@@ -12,7 +12,7 @@ const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index
       <p>Name: {dinosaur.name}</p>
       <p>Species: {dinosaur.dinoSpecies}</p>
       <p>Diet: {dinosaur.dinoDietType}</p>
-      <img className="dino-larger-thumbnail" src={dinosaur.dinoImage}/>
+      <img alt="dinosaur-pic" className="dino-larger-thumbnail" src={dinosaur.dinoImage}/>
     </div>
   )
 })

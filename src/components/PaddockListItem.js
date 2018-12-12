@@ -7,7 +7,6 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
   function onFeed(){
     if(paddock.dinosaurs.length > 0){
       paddock.fed = true
-      console.log(paddock);
       handleFeed(paddock)
     }
   }
@@ -26,7 +25,6 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
   }
 
   const paddockDinos = paddock.dinosaurs.map((dino, index) => {
-    console.log(dino);
     return(
       <>
       {dino + " " + "/" + " " }

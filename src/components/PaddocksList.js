@@ -14,8 +14,9 @@ const PaddocksList = (props) => {
     return (
 
       <>
-      <tr key={index} className={`table-row-paddockState-${paddock.activated}`} >
+      <tr className={`table-row-paddockState-${paddock.activated}`} >
         <PaddockListItem
+            key={index}
             paddock = {paddock}
             handleFeed = {handleFeed}
             handleActivate={handleActivate}/>
@@ -29,10 +30,10 @@ function handleFeed(paddock){
   let request = new Request()
   request.patch(url, paddock).then(() => {
     props.getPaddocks()
-    setTimeout(() => { returnToUnfed(paddock) }, 5000) // function definition, so that is doesn't happen immediately
+    setTimeout(() => { returnToUnfed(paddock) }, 5000)
+    //^^ function definition, so that is doesn't happen immediately
     })
   }
-
 
 function returnToUnfed(paddock){
   paddock.fed = false
