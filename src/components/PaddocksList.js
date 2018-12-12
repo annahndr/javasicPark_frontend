@@ -15,13 +15,14 @@ const PaddocksList = (props) => {
 
       <>
       <tr key={index} className={`table-row-paddockState-${paddock.activated}`} >
-      <PaddockListItem paddock = {paddock} handleFeed = {handleFeed} handleActivate={handleActivate}/>
+        <PaddockListItem
+            paddock = {paddock}
+            handleFeed = {handleFeed}
+            handleActivate={handleActivate}/>
       </tr>
       </>
-
     )
-}
-  )
+})
 
 function handleFeed(paddock){
   const url = '/api/paddocks/' + paddock.id;

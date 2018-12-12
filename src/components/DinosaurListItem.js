@@ -20,7 +20,6 @@ function getValue(evt){
 function addUpdatePaddock(evt){
   evt.preventDefault();
   const paddockLink = getValue(evt)
-  // console.log("event:", evt.target.paddock.value);
   console.log("paddockLink:",paddockLink);
   dino.paddock = paddockLink;
   console.log("dinosaur:", dino);
@@ -31,9 +30,13 @@ function filteredPaddocksHerbivore(){
     return paddocks.filter((paddock, index)=> paddock.paddockType === "Herbivore")
     .map(pad =>
 
-      <option id = {pad.id} value = {pad._links.self.href} key={pad.id} className="paddock" onSelect = {getValue}>
+      <option id = {pad.id}
+              value = {pad._links.self.href}
+              key={pad.id}
+              className="paddock"
+              onSelect = {getValue}>
 
-        {pad.name}
+              {pad.name}
 
       </option>
 
@@ -43,17 +46,18 @@ function filteredPaddocksHerbivore(){
 function filteredPaddocksCarnivore(){
   return paddocks.filter((paddock, index)=> paddock.paddockType === "Carnivore")
       .map(pad =>
-        <option id = {pad.id} value = {pad._links.self.href} key={pad.id} className="paddock" onSelect = {getValue}>
+        <option id = {pad.id}
+                value = {pad._links.self.href}
+                key={pad.id}
+                className="paddock"
+                onSelect = {getValue}>
 
-          {pad.name}
+                {pad.name}
 
         </option>
 
       )
 }
-
-
-
 
 let filteredPaddocks = dino.dinoDietType==="Herbivore" ? filteredPaddocksHerbivore():filteredPaddocksCarnivore();
 
@@ -64,7 +68,6 @@ function paddockName(){
 return(
 
   <>
-
       <td>
         {dino.name}
       </td>

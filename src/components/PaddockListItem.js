@@ -31,8 +31,6 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
       <>
       {dino + " " + "/" + " " }
       </>
-
-
     )
   })
 
@@ -64,10 +62,6 @@ const PaddockListItem = ({paddock, handleFeed, handleActivate}) => {
     </td>
     </>
   )
-
-
 }
-
-
 
 export default PaddockListItem;

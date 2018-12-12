@@ -19,9 +19,7 @@ class Navbar extends Component {
     this.gotoVisitors = this.gotoVisitors.bind(this);
     this.gotoPaddock = this.gotoPaddock.bind(this);
   }
-// onPaddockSelected(id){
-//   console.log("homecontainer paddockselected", id);
-// }
+
   render() {
     const child = this.pageComponent();
     return (
@@ -48,11 +46,21 @@ class Navbar extends Component {
 
     switch (this.state.page) {
       case "/dinosaurs":
-      return <DinosaursList paddock = {this.props.paddock} getPaddock = {this.props.getPaddock} paddocks = {this.props.paddocks} getDinosaurs = {this.props.getDinosaurs} dinoList = {this.props.dinosaurs} />;
+      return <DinosaursList
+                paddock = {this.props.paddock}
+                getPaddock = {this.props.getPaddock}
+                paddocks = {this.props.paddocks}
+                getDinosaurs = {this.props.getDinosaurs}
+                dinoList = {this.props.dinosaurs} />;
       case "/paddocks":
-      return <PaddocksList paddockList = {this.props.paddocks} getPaddocks={this.props.getPaddocks} getPaddocksResetToUnfed={this.props.getPaddocksResetToUnfed}/>;
+      return <PaddocksList
+                paddockList = {this.props.paddocks}
+                getPaddocks={this.props.getPaddocks}
+                getPaddocksResetToUnfed={this.props.getPaddocksResetToUnfed}/>;
       case "/visitors":
-      return <Visitors visitors={this.getVisitors} visitorCount={this.getNumberOfVisitors}/>;
+      return <Visitors
+                visitors={this.getVisitors}
+                visitorCount={this.getNumberOfVisitors}/>;
       default:
       return <DisplayContainer />;
     }

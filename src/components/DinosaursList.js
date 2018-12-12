@@ -34,7 +34,11 @@ const DinosaursList = (props) => {
 return(
       <tr key={dino.id} className="single-dino">
 
-        <DinosaurListItem handleDelete = {deleteDino} dino={dino} paddocks={props.paddocks} handlePaddockUpdate = {handlePaddockUpdate}/>
+        <DinosaurListItem
+            handleDelete = {deleteDino}
+            dino={dino}
+            paddocks={props.paddocks}
+            handlePaddockUpdate = {handlePaddockUpdate}/>
 
       </tr>
     )
@@ -43,8 +47,12 @@ return(
 
 return (
 
-<>
-  <DinosaurForm paddock = {props.paddock} getPaddock = {props.getPaddock} getDinosaurs = {props.getDinosaurs} paddocks = {props.paddocks}/>
+      <>
+        <DinosaurForm
+            paddock = {props.paddock}
+            getPaddock = {props.getPaddock}
+            getDinosaurs = {props.getDinosaurs}
+            paddocks = {props.paddocks}/>
 
   <table id="table">
     <thead>
@@ -53,8 +61,7 @@ return (
       </tr>
     </thead>
       <tbody>
-
-      {dinos}
+        {dinos}
       </tbody>
   </table>
 </>

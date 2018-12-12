@@ -74,7 +74,6 @@ handleSubmit(evt){
       "dinoSpecies": evt.target.dinoSpecies.value,
       "dinoDietType": this.addDietType(evt.target.dinoSpecies.value),
       "dinoImage": evt.target.dinoImage.value
-
     }
 
     // const id = this.getID(evt)
@@ -83,10 +82,6 @@ handleSubmit(evt){
     // const canAdd = this.validateCanAdd(dinosaur)
     //
     // // const dinoList = this.getDinosaursInPaddock(paddock)
-    //
-    //
-    //
-    //
     //
     // if(canAdd===true){
       this.handleDinosaurPost(dinosaur)
