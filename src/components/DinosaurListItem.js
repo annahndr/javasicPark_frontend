@@ -50,10 +50,18 @@ function filteredPaddocksCarnivore(){
 }
 
 
+
+
 let filteredPaddocks = dino.dinoDietType==="Herbivore" ? filteredPaddocksHerbivore():filteredPaddocksCarnivore();
 
+function paddockName(){
+  if(dino.paddock!==null)
+    return dino.paddock.name
+}
 return(
+
   <>
+
       <td>
         {dino.name}
       </td>
@@ -67,7 +75,7 @@ return(
         <img src = {dino.dinoImage}/>
       </td>
       <td>
-          {dino.paddock.name}
+        {paddockName()}
 
       <form className="paddock-change" onSubmit = {addUpdatePaddock}>
           <select name="paddock">
@@ -80,7 +88,7 @@ return(
         <button onClick = {deleteDinoSelected}>DELETE</button>
       </td>
     </>
-)
+  )
 
 
 }
