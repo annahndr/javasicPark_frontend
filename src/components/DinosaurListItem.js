@@ -1,5 +1,8 @@
 import React from 'react';
 import Request from '../helpers/request'
+import '../containers/displayContainer.css';
+
+
 const DinosaurListItem = ({dino, handleDelete, paddocks, handlePaddockUpdate})=> {
 
 if(!dino||!paddocks) return null;
@@ -81,7 +84,7 @@ return(
           <select name="paddock">
             {filteredPaddocks}
           </select>
-          <input type="submit" value = "SAVE" />
+          <input className="paddock-change-save" type="submit" value = "SAVE" />
         </form>
       </td>
       <td>

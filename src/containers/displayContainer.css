@@ -157,3 +157,7 @@ input{
   font-size: 13px;
   font-weight: bold;
 }
+
+.paddock-change-save {
+  padding: 3px;
+}
