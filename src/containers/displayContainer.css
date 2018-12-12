@@ -1,9 +1,12 @@
 .map{
-  border: 5px solid green;
+  border: 5px solid orange;
 }
 .paddock-info{
-  border: 5px solid green;
+  border: 5px solid orange;
   padding: 30px;
+  /* display: flex; */
+  justify-content: center;
+  color: red;
 }
 .display-wrapper{
   display: flex;
@@ -58,6 +61,7 @@ tbody {
   border-collapse: collapse;
   width: 80%;
   margin: auto;
+  font: 20px;
   /* border: 1px solid black; */
 }
 .comment-form{
@@ -67,7 +71,55 @@ tbody {
   display: flex;
   justify-content: space-around;
   border: 1px solid black;
+  padding: 8px;
+}
+input{
+  padding: 10px;
+}
+.addDinoButton{
+  padding: 5px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+.visitor-buttons{
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.visitor-number{
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  border: 3px solid black;
+  justify-content: space-around;
+}
 
+
+.increment-button {
+  font-size: 15px;
+  padding: 5px;
+  border: 2px solid red;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.evac-button {
+  font-size: 50px;
+  padding: 5px;
+  border: 3px solid black;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
 }
 
 .table-row-paddockState-true {
@@ -76,4 +128,32 @@ tbody {
 
 .table-row-paddockState-false {
   color: red;
+}
+
+.dinosaur-short{
+  color: black;
+  font-weight: bold;
+  border: 2px solid black;
+  margin-bottom: 10px;
+  padding: 9px;
+
+}
+
+.paddock-title{
+  display: flex;
+  justify-content: center;
+}
+
+.dino-thumbnail{
+  width: 100px;
+  height: auto;
+}
+.dino-larger-thumbnail{
+  width: 250px;
+  height: auto;
+}
+
+.dino-dropdown{
+  font-size: 13px;
+  font-weight: bold;
 }

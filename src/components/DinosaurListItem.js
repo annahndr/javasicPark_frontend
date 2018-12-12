@@ -72,7 +72,7 @@ return(
         {dino.dinoDietType}
       </td>
       <td>
-        <img src = {dino.dinoImage}/>
+        <img className="dino-thumbnail" src = {dino.dinoImage}/>
       </td>
       <td>
         {paddockName()}

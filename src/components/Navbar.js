@@ -27,16 +27,15 @@ class Navbar extends Component {
     return (
       <>
       <header className="header">
-        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
-        <img src="./images/JAVASIC_LOGO.png" alt="logo" height="100" width="600"/>
-        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="100" width="auto"/>
+        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="150" width="auto"/>
+        <img src="./images/JAVASIC_LOGO.png" alt="logo" height="150" width="600"/>
+        <img src="./images/JAVASIC_PIC_LOGO.png" alt="logo" height="150" width="auto"/>
       </header>
       <div className="navbar">
         <a onClick={this.gotoHome}>Home</a>
         <a onClick={this.gotoDino}>Dinosaurs</a>
         <a onClick={this.gotoPaddock}>Paddocks</a>
         <a onClick={this.gotoVisitors}>Visitors</a>
-        <a>EVACUATE</a>
       </div>
       <div>
         {child}

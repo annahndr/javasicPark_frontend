@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import '../containers/displayContainer.css';
+
 
 const PaddockGuests = (props)=>{
-if (!props.paddockInfo._embedded) return <h2>There are no dinosaurs in this paddock</h2>;
+if (!props.paddockInfo._embedded) return <><h2>There are no dinosaurs in this paddock</h2><img src="./images/sadDino.png" alt="logo" height="auto" width="450px"/></>;
 
 const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index) => {
     return(
@@ -10,7 +12,7 @@ const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index
       <p>Name: {dinosaur.name}</p>
       <p>Species: {dinosaur.dinoSpecies}</p>
       <p>Diet: {dinosaur.dinoDietType}</p>
-      <img src= {dinosaur.dinoImage}/>
+      <img className="dino-larger-thumbnail" src={dinosaur.dinoImage}/>
     </div>
   )
 })
@@ -18,7 +20,7 @@ const paddockGuests = props.paddockInfo._embedded.dinosaurs.map((dinosaur, index
       return(
         <>
         <div className="paddock-guests-title">
-        <h1>Paddocks Inhabitants</h1>
+        <h1 className="paddock-title">JURASSIC GUESTS</h1>
         </div>
         <div className="paddock-wrapper">
         {paddockGuests}
