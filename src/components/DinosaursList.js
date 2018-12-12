@@ -11,6 +11,7 @@ const DinosaursList = (props) => {
   function deleteDino(id){
     const url = '/api/dinosaurs/' + id;
     let request = new Request();
+
     request.delete(url).then(() => {
       props.getDinosaurs()
       }
@@ -20,10 +21,14 @@ const DinosaursList = (props) => {
   function handlePaddockUpdate(id, dino){
     const url = '/api/dinosaurs/' + id;
     let request = new Request();
+
+    const dinoPaddock = request.get(dino.paddock)
+    console.log("dinoPaddock",dinoPaddock);
+
     request.patch(url, dino).then(() => {
-      props.getDinosaurs()
-      }
-    )
+          props.getDinosaurs()
+        })
+
   }
   const dinos = props.dinoList.map((dino, index) =>{
 return(
