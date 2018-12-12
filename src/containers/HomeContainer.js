@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import DisplayContainer from './DisplayContainer';
 import Navbar from '../components/Navbar';
-import Visitors from '../components/Visitors';
 import Request from '../helpers/request.js';
 
 class HomeContainer extends Component {
@@ -11,7 +10,7 @@ constructor() {
     maxVisitors: 5,
     dinosaurs: {},
     paddocks: {},
-    visitors: {},
+    visitors: [],
     paddock:{}//wouldn't actually be here
   }
   this.getDinosaurs = this.getDinosaurs.bind(this);
@@ -20,9 +19,11 @@ constructor() {
   this.getPaddock = this.getPaddock.bind(this);
   this.getNumberOfVisitors = this.getNumberOfVisitors.bind(this)
 }
+
 getNumberOfVisitors(){
   return this.visitors.length;
 }
+
 getPaddock(id){
     let request = new Request()
     request.get('/api/paddocks/' +id)
@@ -62,16 +63,7 @@ render(){
     console.log("render started");
   return (
     <>
-      <Navbar
-          getPaddock = {this.getPaddock}
-          paddock = {this.state.paddock}
-          dinosaurs = {this.state.dinosaurs}
-          paddocks = {this.state.paddocks}
-          getDinosaurs = {this.getDinosaurs}
-          getPaddocks={this.getPaddocks}
-          visitors={this.getVisitors}
-          visitorCount={this.getNumberOfVisitors}
-          />
+      <Navbar getPaddock = {this.getPaddock} paddock = {this.state.paddock} dinosaurs = {this.state.dinosaurs} paddocks = {this.state.paddocks} getDinosaurs = {this.getDinosaurs} getPaddocks={this.getPaddocks}/>
     </>
     )
   }
